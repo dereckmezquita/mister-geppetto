@@ -1,0 +1,59 @@
+{
+  "name": "mister-geppetto",
+  "version": "0.0.6",
+  "description": "Leverage LLM models to manipulate/scrape webpages using Puppeteer.",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn run clean && tsc",
+    "publish": "yarn run build && yarn publish",
+    "link": "yarn build && yarn link",
+    "prepend-jira-id": "bash commit-msg.sh",
+    "prepare": "husky install",
+    "format": "prettier --write .",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dereckmezquita/mister-geppetto.git"
+  },
+  "author": "Dereck Mezquita <dereck@mezquita.io>",
+  "bugs": {
+    "url": "https://github.com/dereckmezquita/mister-geppetto/issues"
+  },
+  "homepage": "https://github.com/dereckmezquita/mister-geppetto#readme",
+  "prettier": {
+    "semi": true,
+    "trailingComma": "none",
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 4,
+    "useTabs": false,
+    "overrides": [
+      {
+        "files": "*.yml",
+        "options": {
+          "tabWidth": 2
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.20.1",
+    "cheerio": "^1.0.0-rc.12",
+    "openai": "^4.27.0",
+    "puppeteer": "^22.0.0"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.5",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "prettier": "^3.2.5",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.4.4"
+  }
+}
