@@ -1,0 +1,46 @@
+// https://yewtu.be/watch?v=f3i9b3uK00U
+// npm install --save-dev ts-node tsconfig-paths
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "TS: main",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/dev/main.ts",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "TS: active file",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${file}",
+            "runtimeArgs": [
+                "-r",
+                "ts-node/register",
+                "-r",
+                "tsconfig-paths/register",
+            ],
+            // "args": [
+            //     // if tsconfig in different location than expected
+            //     "-P",
+            //     "server/tsconfig.json"
+            // ],
+            // "console": "integratedTerminal",
+            // "outFiles": [
+            //     "${workspaceFolder}/server/dist/**/*.js"
+            // ]
+        }
+    ]
+}
